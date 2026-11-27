@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management Portal</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f4f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #263b70;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        button {
+            background: #263b70;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        .search {
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #263b70;
+            color: white;
+        }
+
+        @media(max-width: 600px) {
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Management Portal</h1>
+
+    <h3>Enter Student Details</h3>
+
+    <form onsubmit="event.preventDefault(); addStudent();">
+
+        <input id="roll" placeholder="Roll Number">
+
+        <input id="name" placeholder="Student Name">
+
+        <input id="className" placeholder="Class">
+
+        <input id="marks" type="number" placeholder="Marks">
+
+        <input id="email" type="email" placeholder="Email">
+
+        <button type="submit" id="submitBtn">Add Student</button>
+
+    </form>
+
+    <h3>Student Records</h3>
+
+    <input id="search" class="search"
+    placeholder="Search by name or roll number..."
+    onkeyup="showStudents()">
+
+    <div class="table-container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Roll No</th>
+                    <th>Name</th>
+                    <th>Class</th>
+                    <th>Marks</th>
+                    <th>Email</th>
+                    <th>Result</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="list"></tbody>
+        </table>
+
+    </div>
+
+</div>
+
+<script>
+
+    let students = [];
+    let editIndex = -1;
+
+    // ADD STUDENT
+    function addStudent() {
+
+        let student = {
+            roll: document.getElementById("roll").value,
+            name: document.getElementById("name").value,
+            className: document.getElementById("className").value,
+            marks: document.getElementById("marks").value,
+            email: document.getElementById("email").value
+        };
+
+        if (editIndex == -1) {
+            students.push(student);
+        } else {
+            students[editIndex] = student;
+            editIndex = -1;
+        }
+
+        showStudents();
+
+        document.getElementById("roll").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("className").value = "";
+        document.getElementById("marks").value = "";
+        document.getElementById("email").value = "";
+    }
+
+    // DISPLAY AND SEARCH
+    function showStudents() {
+
+        let output = "";
+        let search = document.getElementById("search").value.toLowerCase();
+
+        students.forEach(function(s, i) {
+
+            if (s.name.toLowerCase().includes(search) ||
+                s.roll.toLowerCase().includes(search)) {
+
+                let result = s.marks >= 40 ? "Pass" : "Fail";
+
+                output += `
+                <tr>
+                    <td>${s.roll}</td>
+                    <td>${s.name}</td>
+                    <td>${s.className}</td>
+                    <td>${s.marks}</td>
+                    <td>${s.email}</td>
+                    <td>${result}</td>
+                    <td>
+                        <button onclick="editStudent(${i})">Edit</button>
+                        <button onclick="deleteStudent(${i})">Delete</button>
+                    </td>
+                </tr>`;
+            }
+
+        });
+
+        document.getElementById("list").innerHTML = output;
+    }
+
+    // EDIT STUDENT
+    function editStudent(i) {
+
+        let s = students[i];
+
+        document.getElementById("roll").value = s.roll;
+        document.getElementById("name").value = s.name;
+        document.getElementById("className").value = s.className;
+        document.getElementById("marks").value = s.marks;
+        document.getElementById("email").value = s.email;
+
+        editIndex = i;
+    }
+
+    // DELETE STUDENT
+    function deleteStudent(i) {
+
+        students.splice(i, 1);
+
+        showStudents();
+    }
+
+</script>
+
+</body>
+</html>
