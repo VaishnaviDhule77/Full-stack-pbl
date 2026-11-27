@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f3f5fa;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #263b80;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px #ccc;
+}
+
+/* Buttons */
+button {
+    background: #263b80;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4059ae;
+}
+
+/* Main section */
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px #ddd;
+}
+
+h2 {
+    color: #263b80;
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-bottom: 12px;
+}
+
+/* Form */
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 110px;
+    resize: vertical;
+}
+
+/* Dashboard */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    background: #edf1fc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #d5def5;
+}
+
+.stat-card h3 {
+    color: #263b80;
+    font-size: 26px;
+}
+
+/* Complaint cards */
+.complaint-card {
+    border: 1px solid #ddd;
+    border-left: 5px solid #263b80;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 7px;
+    background: white;
+}
+
+.complaint-card p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.complaint-card select {
+    margin-top: 10px;
+}
+
+/* Priority labels */
+.priority {
+    font-weight: bold;
+}
+
+.high {
+    color: #d93025;
+}
+
+.medium {
+    color: #b7791f;
+}
+
+.low {
+    color: #16803c;
+}
+
+/* Status labels */
+.status {
+    font-weight: bold;
+    color: #263b80;
+}
+
+.hidden {
+    display: none;
+}
+
+#formMessage {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    main {
+        width: 95%;
+    }
+
+    nav button {
+        padding: 9px 12px;
+    }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>JobConnect</h1>
+        <p>Find opportunities. Build your future.</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('studentSection')">Student</button>
+        <button onclick="showSection('recruiterSection')">Recruiter</button>
+        <button onclick="showSection('applicationsSection')">Applications</button>
+    </nav>
+
+    <main>
+
+        <!-- Student Section -->
+        <section id="studentSection">
+            <h2>Find Your Dream Job</h2>
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by job title or location"
+                >
+                <button onclick="searchJobs()">Search</button>
+                <button onclick="loadJobs()">Show All</button>
+            </div>
+
+            <div id="jobList" class="job-list"></div>
+        </section>
+
+
+        <!-- Recruiter Section -->
+        <section id="recruiterSection" class="hidden">
+            <h2>Post a New Job</h2>
+
+            <form id="jobForm">
+                <input type="text" id="jobTitle" placeholder="Job Title" required>
+
+                <input type="text" id="company" placeholder="Company Name" required>
+
+                <input type="text" id="location" placeholder="Job Location" required>
+
+                <textarea id="description" placeholder="Job Description" required></textarea>
+
+                <input type="text" id="eligibility" placeholder="Eligibility" required>
+
+                <button type="submit">Post Job</button>
+            </form>
+
+            <p id="jobMessage"></p>
+        </section>
+
+
+        <!-- Applications Section -->
+        <section id="applicationsSection" class="hidden">
+            <h2>Received Applications</h2>
+
+            <button onclick="loadApplications()">View Applications</button>
+
+            <div id="applicationList"></div>
+        </section>
+
+    </main>
+
+
+    <!-- Apply Job Popup -->
+    <div id="applyModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeApplyForm()">&times;</span>
+
+            <h2>Apply for Job</h2>
+
+            <form id="applicationForm">
+                <input type="hidden" id="selectedJobId">
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="studentEmail"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="studentPhone"
+                    placeholder="Phone Number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required
+                >
+
+                <input
+                    type="url"
+                    id="resumeLink"
+                    placeholder="Resume Link (https://...)"
+                    required
+                >
+
+                <button type="submit">Submit Application</button>
+            </form>
+
+            <p id="applicationMessage"></p>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

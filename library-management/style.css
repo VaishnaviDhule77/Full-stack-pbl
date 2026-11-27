@@ -1,0 +1,182 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f4f8;
+    margin: 0;
+    color: #333;
+}
+
+/* NAVBAR */
+nav {
+    background: #263b70;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    margin: 0;
+}
+
+/* MAIN CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 25px auto;
+}
+
+/* WELCOME */
+.welcome {
+    background: #263b70;
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* DASHBOARD */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px #ddd;
+}
+
+.card h2 {
+    color: #263b70;
+    font-size: 30px;
+}
+
+/* SECTIONS */
+section {
+    background: white;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #ddd;
+}
+
+section h2 {
+    color: #263b70;
+}
+
+/* INPUTS */
+input {
+    padding: 12px;
+    margin: 8px 5px 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 220px;
+    max-width: 100%;
+}
+
+/* BUTTONS */
+button {
+    background: #263b70;
+    color: white;
+    padding: 11px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background: #405a9b;
+}
+
+button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+/* BOOK CARDS */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.book {
+    background: #f8f9fc;
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: 0.2s;
+}
+
+.book:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px #ddd;
+}
+
+.book h3 {
+    color: #263b70;
+}
+
+/* STATUS */
+.available {
+    color: green;
+    font-weight: bold;
+}
+
+.issued {
+    color: #d97706;
+    font-weight: bold;
+}
+
+/* MESSAGE */
+#message {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    section {
+        padding: 15px;
+    }
+}

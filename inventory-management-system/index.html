@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Inventory Management System</h1>
+        <p>Manage your products and stock easily</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('dashboardSection')">Dashboard</button>
+        <button onclick="showSection('productSection')">Manage Products</button>
+    </nav>
+
+    <main>
+
+        <!-- Dashboard -->
+        <section id="dashboardSection">
+            <h2>Inventory Dashboard</h2>
+
+            <div class="dashboard">
+                <div class="dashboard-card">
+                    <h3>Total Products</h3>
+                    <p id="totalProducts">0</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Total Stock Units</h3>
+                    <p id="totalQuantity">0</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Inventory Value</h3>
+                    <p id="inventoryValue">₹0</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Low Stock Products</h3>
+                    <p id="lowStockCount">0</p>
+                </div>
+            </div>
+
+            <h2>Product Inventory</h2>
+
+            <div id="dashboardProducts" class="product-list"></div>
+        </section>
+
+
+        <!-- Product Management -->
+        <section id="productSection" class="hidden">
+
+            <h2 id="formTitle">Add New Product</h2>
+
+            <form id="productForm">
+
+                <input type="hidden" id="productId">
+
+                <input
+                    type="text"
+                    id="productName"
+                    placeholder="Product Name"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="quantity"
+                    placeholder="Quantity"
+                    min="0"
+                    step="1"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="price"
+                    placeholder="Price"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="supplier"
+                    placeholder="Supplier Name"
+                    required
+                >
+
+                <button type="submit" id="submitButton">Add Product</button>
+
+                <button
+                    type="button"
+                    id="cancelButton"
+                    class="hidden"
+                    onclick="resetForm()"
+                >
+                    Cancel Edit
+                </button>
+
+            </form>
+
+            <p id="message"></p>
+
+            <h2>All Products</h2>
+
+            <div id="productList" class="product-list"></div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

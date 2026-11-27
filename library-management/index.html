@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>📚 My Library</h2>
+        <span>Library Management System</span>
+    </nav>
+
+    <div class="container">
+
+        <!-- WELCOME SECTION -->
+        <div class="welcome">
+            <h1>Welcome, Librarian!</h1>
+            <p>Manage your books, members and book issues easily.</p>
+        </div>
+
+        <!-- DASHBOARD -->
+        <div class="dashboard">
+
+            <div class="card">
+                <h3>Total Books</h3>
+                <h2 id="totalBooks">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Available Books</h3>
+                <h2 id="availableBooks">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Issued Books</h3>
+                <h2 id="issuedBooks">0</h2>
+            </div>
+
+        </div>
+
+        <!-- MESSAGE -->
+        <p id="message"></p>
+
+        <!-- ADD BOOK -->
+        <section>
+            <h2>➕ Add New Book</h2>
+
+            <form id="bookForm">
+                <input type="text" id="title"
+                    placeholder="Enter Book Title" required>
+
+                <input type="text" id="author"
+                    placeholder="Enter Author Name" required>
+
+                <button type="submit">Add Book</button>
+            </form>
+        </section>
+
+        <!-- BOOK CATALOGUE -->
+        <section>
+            <h2>📖 Book Catalogue</h2>
+
+            <input type="text" id="search"
+                placeholder="Search books by title or author..."
+                oninput="loadBooks()">
+
+            <div id="books" class="book-list"></div>
+        </section>
+
+        <!-- ISSUED BOOKS -->
+        <section>
+            <h2>📋 Currently Issued Books</h2>
+
+            <div id="issued" class="book-list"></div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Library Management System | 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

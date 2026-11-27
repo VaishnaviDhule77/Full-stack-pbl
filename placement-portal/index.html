@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Placement Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Campus Placement Portal</h1>
+        <p>Your career journey starts here</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('registerSection')">Student Registration</button>
+        <button onclick="showSection('driveSection')">Company Drives</button>
+        <button onclick="showSection('historySection')">My Applications</button>
+        <button onclick="showSection('adminSection')">Admin Dashboard</button>
+    </nav>
+
+    <main>
+
+        <!-- Student Registration -->
+        <section id="registerSection">
+            <h2>Student Registration</h2>
+
+            <form id="studentForm">
+
+                <input type="text" id="name"
+                    placeholder="Full Name" required>
+
+                <input type="email" id="email"
+                    placeholder="Email Address" required>
+
+                <input type="tel" id="phone"
+                    placeholder="10-digit Phone Number"
+                    pattern="[0-9]{10}" maxlength="10" required>
+
+                <select id="department" required>
+                    <option value="">Select Department</option>
+                    <option value="MCA">MCA</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Electronics">Electronics</option>
+                </select>
+
+                <input type="number" id="cgpa"
+                    placeholder="Enter CGPA (0-10)"
+                    min="0" max="10" step="0.01" required>
+
+                <textarea id="skills"
+                    placeholder="Enter Your Skills" required></textarea>
+
+                <button type="submit">Register Student</button>
+            </form>
+
+            <p id="registerMessage"></p>
+
+            <div id="profileDetails"></div>
+        </section>
+
+
+        <!-- Company Drives -->
+        <section id="driveSection" class="hidden">
+            <h2>Available Company Drives</h2>
+
+            <input type="email" id="driveEmail"
+                placeholder="Enter your registered student email">
+
+            <div id="driveList" class="drive-list"></div>
+        </section>
+
+
+        <!-- Student Application History -->
+        <section id="historySection" class="hidden">
+            <h2>My Applications</h2>
+
+            <input type="email" id="historyEmail"
+                placeholder="Enter your registered student email">
+
+            <button onclick="loadStudentApplications()">
+                View My Applications
+            </button>
+
+            <div id="studentApplications"></div>
+        </section>
+
+
+        <!-- Admin Dashboard -->
+        <section id="adminSection" class="hidden">
+            <h2>Admin Dashboard</h2>
+
+            <h3>Select Company Drive</h3>
+
+            <select id="adminDriveSelect"
+                onchange="loadApplicants()">
+                <option value="">Select a Company Drive</option>
+            </select>
+
+            <div id="applicantList"></div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

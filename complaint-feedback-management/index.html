@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Complaint & Feedback Portal</h1>
+        <p>Share your concerns. Help us improve.</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('complaintSection')">
+            Submit Complaint
+        </button>
+
+        <button onclick="showSection('adminSection')">
+            Admin Dashboard
+        </button>
+    </nav>
+
+    <main>
+
+        <!-- Complaint Form -->
+        <section id="complaintSection">
+            <h2>Submit a Complaint / Feedback</h2>
+
+            <form id="complaintForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter Your Email"
+                    required
+                >
+
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Academic">Academic</option>
+                    <option value="Hostel">Hostel</option>
+                    <option value="Infrastructure">Infrastructure</option>
+                    <option value="Administration">Administration</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <select id="priority" required>
+                    <option value="">Select Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <textarea
+                    id="description"
+                    placeholder="Describe your complaint or feedback"
+                    required
+                ></textarea>
+
+                <button type="submit">Submit Complaint</button>
+
+            </form>
+
+            <p id="formMessage"></p>
+        </section>
+
+
+        <!-- Admin Dashboard -->
+        <section id="adminSection" class="hidden">
+
+            <h2>Admin Dashboard</h2>
+
+            <!-- Statistics -->
+            <div class="dashboard">
+
+                <div class="stat-card">
+                    <h3 id="totalCount">0</h3>
+                    <p>Total Complaints</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 id="openCount">0</h3>
+                    <p>Open</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 id="progressCount">0</h3>
+                    <p>In Progress</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 id="resolvedCount">0</h3>
+                    <p>Resolved</p>
+                </div>
+
+            </div>
+
+            <!-- Status Filter -->
+            <h3>Manage Complaints</h3>
+
+            <select id="statusFilter" onchange="loadComplaints()">
+                <option value="All">All Complaints</option>
+                <option value="Open">Open</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Resolved">Resolved</option>
+            </select>
+
+            <div id="complaintList"></div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

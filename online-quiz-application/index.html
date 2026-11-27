@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Online Quiz Application</h1>
+        <p>Test Your Knowledge</p>
+    </header>
+
+    <div class="container">
+
+        <section id="startSection">
+            <h2>Welcome to the Quiz</h2>
+
+            <label>Enter Your Name</label>
+            <input type="text" id="studentName"
+                placeholder="Enter your name">
+
+            <button onclick="startQuiz()">Start Quiz</button>
+        </section>
+
+        <section id="quizSection" class="hidden">
+
+            <div class="quiz-header">
+                <h2 id="questionNumber">Question 1 of 10</h2>
+                <h3>Time: <span id="timer">10:00</span></h3>
+            </div>
+
+            <h3 id="question"></h3>
+
+            <div id="options"></div>
+
+            <div class="navigation">
+                <button id="previousBtn" onclick="previousQuestion()">
+                    Previous
+                </button>
+
+                <button id="nextBtn" onclick="nextQuestion()">
+                    Next
+                </button>
+
+                <button id="submitBtn" onclick="submitQuiz()">
+                    Submit Quiz
+                </button>
+            </div>
+
+        </section>
+
+        <section id="resultSection" class="hidden">
+            <h2>Quiz Completed!</h2>
+            <div id="result"></div>
+            <button onclick="location.reload()">Try Again</button>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

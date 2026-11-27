@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Foodie Express</h1>
+        <p>Delicious food delivered to your table!</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('menuSection')">Food Menu</button>
+        <button onclick="showSection('cartSection')">My Cart</button>
+        <button onclick="showSection('historySection')">Order History</button>
+    </nav>
+
+    <main>
+
+        <!-- Menu Section -->
+        <section id="menuSection">
+            <h2>Our Food Menu</h2>
+
+            <div id="menuList" class="menu-list"></div>
+        </section>
+
+
+        <!-- Cart Section -->
+        <section id="cartSection" class="hidden">
+            <h2>My Cart</h2>
+
+            <div id="cartList"></div>
+
+            <h3 id="totalBill">Total: ₹0</h3>
+
+            <form id="orderForm">
+                <h3>Customer Details</h3>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter Your Name"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter 10-digit Phone Number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required
+                >
+
+                <button type="submit">Place Order</button>
+            </form>
+
+            <p id="orderMessage"></p>
+        </section>
+
+
+        <!-- Order History Section -->
+        <section id="historySection" class="hidden">
+            <h2>Order History</h2>
+
+            <button onclick="loadHistory()">Refresh History</button>
+
+            <div id="historyList"></div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

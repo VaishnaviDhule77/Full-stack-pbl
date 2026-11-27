@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Appointment Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CarePoint Hospital</h1>
+        <p>Hospital Appointment Booking System</p>
+    </header>
+
+    <div class="container">
+
+        <section class="form-section">
+            <h2>Book an Appointment</h2>
+
+            <form id="appointmentForm">
+
+                <label>Patient Name</label>
+                <input type="text" id="patientName"
+                    placeholder="Enter patient name" required>
+
+                <label>Select Doctor</label>
+                <select id="doctorName" required>
+                    <option value="">Choose Doctor</option>
+                    <option value="Dr. Sharma">Dr. Sharma - Cardiologist</option>
+                    <option value="Dr. Patil">Dr. Patil - Dentist</option>
+                    <option value="Dr. Joshi">Dr. Joshi - Dermatologist</option>
+                    <option value="Dr. Mehta">Dr. Mehta - General Physician</option>
+                </select>
+
+                <label>Appointment Date</label>
+                <input type="date" id="date" required>
+
+                <label>Time Slot</label>
+                <select id="timeSlot" required>
+                    <option value="">Choose Time</option>
+                    <option value="09:00 AM">09:00 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="02:00 PM">02:00 PM</option>
+                    <option value="03:00 PM">03:00 PM</option>
+                    <option value="04:00 PM">04:00 PM</option>
+                </select>
+
+                <button type="submit">Book Appointment</button>
+            </form>
+
+            <p id="message"></p>
+        </section>
+
+        <section class="appointments-section">
+            <h2>Upcoming Appointments</h2>
+            <div id="appointmentList"></div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Event Registrations</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <p>Manage Event Registrations</p>
+        </header>
+
+        <div class="dashboard-card">
+            <h2>Total Registrations</h2>
+            <h1 id="totalCount">0</h1>
+        </div>
+
+        <section class="table-section">
+            <div class="table-heading">
+                <h2>Registered Participants</h2>
+                <button onclick="loadRegistrations()">
+                    Refresh
+                </button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sr. No.</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Event</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="registrationTable">
+                        <tr>
+                            <td colspan="6">Loading registrations...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <a href="index.html" class="back-link">
+            Back to Registration Page
+        </a>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

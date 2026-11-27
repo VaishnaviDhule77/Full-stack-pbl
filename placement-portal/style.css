@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f3f5fa;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #263b80;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px #ccc;
+}
+
+/* Buttons */
+button {
+    background: #263b80;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4059ae;
+}
+
+/* Main content */
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px #ddd;
+}
+
+h2 {
+    color: #263b80;
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin: 12px 0;
+}
+
+/* Forms */
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Company drive cards */
+.drive-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.drive-card {
+    border: 1px solid #ddd;
+    border-left: 5px solid #263b80;
+    padding: 18px;
+    border-radius: 7px;
+    background: white;
+}
+
+.drive-card h3 {
+    color: #263b80;
+}
+
+.drive-card p {
+    margin: 9px 0;
+    line-height: 1.5;
+}
+
+/* Profile */
+.profile-card {
+    background: #edf1fc;
+    padding: 18px;
+    margin-top: 20px;
+    border-radius: 8px;
+    line-height: 1.8;
+}
+
+/* Applicant cards */
+.applicant-card {
+    border: 1px solid #ddd;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 7px;
+    line-height: 1.8;
+}
+
+/* Status */
+.status {
+    color: #263b80;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+#registerMessage {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    main {
+        width: 95%;
+    }
+
+    nav button {
+        padding: 9px 12px;
+        margin: 3px;
+    }
+}

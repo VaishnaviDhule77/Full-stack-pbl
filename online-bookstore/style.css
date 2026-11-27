@@ -1,0 +1,52 @@
+body {
+    font-family: Arial;
+    background: #f2f4f8;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #263b70;
+}
+
+#books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.book {
+    background: white;
+    width: 200px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #ccc;
+}
+
+button, select {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button {
+    background: #263b70;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#cart {
+    background: white;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+    .book {
+        width: 90%;
+    }
+}

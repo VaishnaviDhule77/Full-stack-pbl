@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Leave Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>🏢 Leave Management</h2>
+        <span>Employee Portal</span>
+    </nav>
+
+    <div class="container">
+
+        <!-- WELCOME -->
+        <div class="welcome">
+            <h1>Employee Leave Management System</h1>
+            <p>Apply for leave and manage your leave requests easily.</p>
+        </div>
+
+        <!-- DASHBOARD -->
+        <div class="dashboard">
+
+            <div class="card">
+                <h3>Total Requests</h3>
+                <h2 id="total">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Pending</h3>
+                <h2 id="pending">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Approved</h3>
+                <h2 id="approved">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Rejected</h3>
+                <h2 id="rejected">0</h2>
+            </div>
+
+        </div>
+
+        <p id="message"></p>
+
+        <!-- EMPLOYEE FORM -->
+        <section>
+            <h2>📝 Apply for Leave</h2>
+
+            <form id="leaveForm">
+
+                <input type="text" id="employeeName"
+                    placeholder="Employee Name" required>
+
+                <select id="leaveType" required>
+                    <option value="">Select Leave Type</option>
+                    <option value="Casual">Casual Leave</option>
+                    <option value="Sick">Sick Leave</option>
+                    <option value="Earned">Earned Leave</option>
+                </select>
+
+                <label>Start Date</label>
+                <input type="date" id="startDate" required>
+
+                <label>End Date</label>
+                <input type="date" id="endDate" required>
+
+                <textarea id="reason"
+                    placeholder="Enter Leave Reason"
+                    required></textarea>
+
+                <button type="submit">Submit Application</button>
+
+            </form>
+        </section>
+
+        <!-- ADMIN DASHBOARD -->
+        <section>
+            <h2>👨‍💼 Admin Dashboard</h2>
+
+            <p>View and manage employee leave applications.</p>
+
+            <div id="leaveList"></div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Employee Leave Management System | 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
